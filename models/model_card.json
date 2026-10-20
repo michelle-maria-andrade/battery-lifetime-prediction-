@@ -1,0 +1,44 @@
+{
+  "version": "1.0",
+  "model": "SVR (RBF), C=1.0, epsilon=0.02, standardised inputs",
+  "features": [
+    "cc_ratio",
+    "cv_ratio",
+    "t40_ratio",
+    "win_ratio",
+    "is_calce"
+  ],
+  "is_calce": "1 for CALCE-type cells, 0 for NASA-type cells",
+  "feature_definitions": {
+    "cc_ratio": "time to first reach 4.19 V during charge / early-life median",
+    "cv_ratio": "time from 4.19 V to end of charge / early-life median",
+    "t40_ratio": "time to reach 4.0 V during charge / early-life median",
+    "win_ratio": "capacity discharged between 3.8 V and 3.4 V / early-life median"
+  },
+  "early_life_cycles": 5,
+  "end_of_life_soh": 0.8,
+  "interval_level": 0.95,
+  "interval_half_width_soh": {
+    "CALCE": 0.0193,
+    "NASA": 0.0439
+  },
+  "loo_rmse_by_dataset": {
+    "CALCE": 0.0095,
+    "NASA": 0.0196
+  },
+  "nested_coverage_by_dataset": {
+    "CALCE": 0.958,
+    "NASA": 0.957
+  },
+  "training_batteries": [
+    "B0005",
+    "B0006",
+    "B0007",
+    "B0018",
+    "CS2_35",
+    "CS2_36",
+    "CS2_37",
+    "CS2_38"
+  ],
+  "sklearn_version": "1.9.1"
+}
